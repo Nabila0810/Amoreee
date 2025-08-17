@@ -2,14 +2,14 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Nixie One', cursive; /* Mengganti font agar lebih elegan */
+    font-family: 'Nixie One', cursive;
     color: #ffffff;
     overflow: hidden;
     text-align: center;
-    background: #000; /* Warna dasar jika gambar gagal dimuat */
+    background: #000;
 }
 
-/* BACKGROUND UTAMA: Menggunakan div terpisah untuk kontrol lebih baik */
+/* BACKGROUND UTAMA */
 body::before {
     content: '';
     position: fixed;
@@ -20,7 +20,7 @@ body::before {
     background: url('https://i.ibb.co/b32R0P7/milky-way-g163673f4e-1920.jpg') no-repeat center center;
     background-size: cover;
     z-index: -2;
-    animation: slow-pan 50s linear infinite alternate; /* Animasi background bergerak */
+    animation: slow-pan 50s linear infinite alternate;
 }
 
 /* Lapisan Gelap Transparan */
@@ -53,9 +53,9 @@ body::after {
 /* Judul dengan efek bersinar */
 h1.glow {
     font-family: 'Turret Road', sans-serif;
-    font-size: 3.5em; /* Ukuran disesuaikan */
+    font-size: 3.5em;
     color: #fff;
-    text-shadow: 
+    text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
         0 0 21px #fff,
@@ -71,10 +71,8 @@ h1.glow {
 @keyframes flicker {
     40% { opacity: 0.8; }
     42% { opacity: 1; }
-    /* ... (pola kelip lainnya bisa ditambahkan) */
     100% { opacity: 1; }
 }
-
 
 p {
     font-size: 1.4em;
@@ -98,6 +96,7 @@ p.nama {
     animation: pulse 2s infinite;
     transition: transform 0.3s ease;
 }
+
 .heart-btn:hover {
     transform: scale(1.2);
 }
@@ -122,23 +121,6 @@ p.nama {
     width: 80%;
     max-width: 600px;
     margin: 0 auto;
-}
-
-#nextButton {
-    background-color: rgba(13, 59, 102, 0.8);
-    color: #f0e68c;
-    border: 2px solid #f0e68c;
-    padding: 10px 20px;
-    font-family: 'Turret Road', cursive;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-#nextButton:hover {
-    background-color: #f0e68c;
-    color: #0d3b66;
 }
 
 /* Hadiah Terakhir */
