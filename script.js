@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
         "3...",
         "2...",
         "1...",
-        "Mendeteksi sinyal ulang tahun dari planet Bumi.",
-        "Seseorang yang spesial sedang merayakan hari jadinya hari ini.",
-        "Orang itu adalah kamu, Nabila!",
-        "Aku ingin mengirimkan sebuah pesan lintas galaksi untukmu...",
-        "Semoga hari ini menjadi awal dari petualangan baru yang luar biasa.",
-        "Teruslah bersinar lebih terang dari bintang paling terang di angkasa.",
+        "Haiii Gantengkuuu...",
+        "Terimakasih karena kamu selalu membuat hari-hariku menjadi sangat ceria🥰",
+        "Terimakasih karena kamu selalu membuat hidupku bahagia😘",
+        "Aku ingin mengirimkan sebuah pesan untukmu...",
+        "Maaf apabila pada pesan ini terdapat kesalahan kata, ketikan, dan ucapan",
+        "Teruslah bersinar lebih terang dari bintang paling terang di angkasa, kamu sangatlah berharga dihidupku sayangku, teruslah menjadi sosok pemberani, penyabar, penyayang dan sosok baik hati dan murah senyum {tapi ke aku aja yaa ganteng☺} yang aku kenal, jangan pernah berubah. Satu hal yang harus kamu tau sayangku, aku sangat dan selalu menyayangimu sayangku, aku selalu dan sangat mencintaimu cintakuuu🩵. Teruslah berbahagia bersamaku didunia dan alam setelahnya, teruslah bersamaku selama-lamanya baik didunia maupun alam setelahnya",
         "Dan yang terpenting...",
-        "Jangan pernah berhenti menjadi dirimu yang hebat!",
+        "Jangan pernah berhenti menjadi dirimu yang hebat! SAKTIYA YUDA PRADHIKA adalah sosok yang hebat🩵",
         "Siap menerima hadiahmu?"
     ];
 
