@@ -6,7 +6,7 @@ body {
     color: #ffffff;
     overflow: hidden;
     text-align: center;
-    background: #000000; /* Warna dasar jika gambar gagal dimuat */
+    background: #000; /* Warna dasar jika gambar gagal dimuat */
 }
 
 /* BACKGROUND UTAMA: Menggunakan div terpisah untuk kontrol lebih baik */

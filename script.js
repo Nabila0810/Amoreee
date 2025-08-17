@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // const nextButton = document.getElementById('nextButton'); // <<< BARIS INI DIHAPUS, karena tombol tidak dipakai lagi
 
     const messages = [
-        "Transmisi dimulai...",
+        "Kejutan dimulai...",
         "3...",
         "2...",
         "1...",
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Teruslah bersinar lebih terang dari bintang paling terang di angkasa, kamu sangatlah berharga dihidupku sayangku, teruslah menjadi sosok pemberani, penyabar, penyayang dan sosok baik hati dan murah senyum {tapi ke aku aja yaa ganteng☺} yang aku kenal, jangan pernah berubah. Satu hal yang harus kamu tau sayangku, aku sangat dan selalu menyayangimu sayangku, aku selalu dan sangat mencintaimu cintakuuu🩵. Teruslah berbahagia bersamaku didunia dan alam setelahnya, teruslah bersamaku selama-lamanya baik didunia maupun alam setelahnya",
         "Dan yang terpenting...",
         "Jangan pernah berhenti menjadi dirimu yang hebat! SAKTIYA YUDA PRADHIKA adalah sosok yang hebat🩵",
-        "Siap menerima hadiahmu?"
+        "Bahagia terus yaaa sayangkuuu, jaga kesehatan, jangan  lupa makan dan istirahat yang cukup"
     ];
 
     let currentMessageIndex = 0;
