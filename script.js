@@ -5,10 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageScreen = document.getElementById('message-screen');
     const finalScreen = document.getElementById('final-screen');
     const messageText = document.getElementById('message-text');
-    const nextButton = document.getElementById('nextButton');
     const backgroundMusic = document.getElementById('background-music');
+    // const nextButton = document.getElementById('nextButton'); // <<< BARIS INI DIHAPUS, karena tombol tidak dipakai lagi
 
-    // === KUSTOMISASI PESAN DI SINI ===
     const messages = [
         "Transmisi dimulai...",
         "3...",
@@ -24,19 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Jangan pernah berhenti menjadi dirimu yang hebat!",
         "Siap menerima hadiahmu?"
     ];
-    // ============================
 
     let currentMessageIndex = 0;
 
     // Fungsi untuk memulai misi
     startButton.addEventListener('click', () => {
-        // Efek fade out untuk layar pembuka
         welcomeScreen.style.transition = 'opacity 1s ease';
         welcomeScreen.style.opacity = '0';
 
-        // Putar musik
         backgroundMusic.play().catch(error => {
-            console.log("Autoplay musik dicegah oleh browser. Diperlukan interaksi pengguna.");
+            console.log("Autoplay musik dicegah oleh browser.");
         });
 
         setTimeout(() => {
@@ -46,17 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 messageScreen.style.transition = 'opacity 1s ease';
                 messageScreen.style.opacity = '1';
-                displayNextMessage();
+                displayNextMessage(); // Memulai rangkaian pesan otomatis
             }, 100);
-        }, 1000); // Tunggu animasi fade out selesai
+        }, 1000);
     });
 
-    // Fungsi untuk menampilkan pesan selanjutnya
-    nextButton.addEventListener('click', displayNextMessage);
+    // nextButton.addEventListener('click', displayNextMessage); // <<< BARIS INI DIHAPUS, tidak perlu event click lagi
 
     function displayNextMessage() {
         if (currentMessageIndex < messages.length) {
-            nextButton.classList.add('hidden'); // Sembunyikan tombol saat mengetik
             typeWriter(messages[currentMessageIndex], 0);
             currentMessageIndex++;
         } else {
@@ -81,16 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
             messageText.innerHTML = text.substring(0, i + 1) + '<span class="cursor">|</span>';
             setTimeout(() => {
                 typeWriter(text, i + 1)
-            }, 50); // Kecepatan ketikan (ms)
+            }, 50);
         } else {
             messageText.innerHTML = text; // Hapus kursor setelah selesai
-            // Tombol "Lanjut" hanya muncul jika bukan pesan terakhir
-            if (currentMessageIndex < messages.length) {
-                nextButton.classList.remove('hidden');
-            } else {
-                // Ini pesan terakhir, otomatis lanjut ke layar hadiah setelah jeda
-                setTimeout(displayNextMessage, 2000);
-            }
+            
+            // ===================================================================
+            // PERUBAHAN UTAMA DI SINI
+            // Setelah pesan selesai diketik, tunggu 2 detik lalu panggil pesan berikutnya secara otomatis.
+            setTimeout(() => {
+                displayNextMessage();
+            }, 2000); // Jeda 2000 milidetik = 2 detik
+            // ===================================================================
         }
     }
 });
