@@ -1,126 +1,160 @@
 /* Pengaturan Dasar */
 body {
     margin: 0;
-    font-family: 'Turret Road', cursive;
-    background-color: #00001a; /* Warna biru gelap malam */
+    padding: 0;
+    font-family: 'Nixie One', cursive; /* Mengganti font agar lebih elegan */
     color: #ffffff;
-    overflow: hidden; /* Mencegah scroll */
+    overflow: hidden;
+    text-align: center;
+    background: #000000; /* Warna dasar jika gambar gagal dimuat */
+}
+
+/* BACKGROUND UTAMA: Menggunakan div terpisah untuk kontrol lebih baik */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.ibb.co/b32R0P7/milky-way-g163673f4e-1920.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+    animation: slow-pan 50s linear infinite alternate; /* Animasi background bergerak */
+}
+
+/* Lapisan Gelap Transparan */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 10, 0.5);
+    z-index: -1;
+}
+
+/* Animasi background bergerak perlahan */
+@keyframes slow-pan {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    text-align: center;
-}
-
-.container {
-    max-width: 90%;
     padding: 20px;
-    z-index: 10;
+    box-sizing: border-box;
 }
 
-/* Tombol */
-button {
-    background-color: #0d3b66;
-    color: #f4d35e;
-    border: 2px solid #f4d35e;
-    padding: 12px 25px;
-    font-family: 'Turret Road', cursive;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    margin-top: 20px;
+/* Judul dengan efek bersinar */
+h1.glow {
+    font-family: 'Turret Road', sans-serif;
+    font-size: 3.5em; /* Ukuran disesuaikan */
+    color: #fff;
+    text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+    animation: flicker 1.5s infinite alternate;
 }
 
-button:hover {
-    background-color: #f4d35e;
-    color: #0d3b66;
+/* Animasi kelip untuk judul */
+@keyframes flicker {
+    40% { opacity: 0.8; }
+    42% { opacity: 1; }
+    /* ... (pola kelip lainnya bisa ditambahkan) */
+    100% { opacity: 1; }
 }
 
-/* Teks dan Judul */
-h1 {
-    font-size: 2.5em;
-    color: #faf0e6;
-    text-shadow: 0 0 10px #f4d35e, 0 0 20px #f4d35e;
-}
 
 p {
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 1.6;
+    text-shadow: 1px 1px 3px #000;
+}
+
+p.nama {
+    font-family: 'Turret Road', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #f0e68c;
+}
+
+/* Tombol Hati */
+.heart-btn {
+    background: none;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+.heart-btn:hover {
+    transform: scale(1.2);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Kotak Pesan */
 #message-box {
-    background: rgba(13, 59, 102, 0.6);
-    border: 1px solid #f4d35e;
+    background: rgba(10, 25, 47, 0.75);
+    border: 1px solid rgba(240, 230, 140, 0.5);
     padding: 25px;
     border-radius: 10px;
     min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(5px);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Elemen Tersembunyi */
-.hidden {
-    display: none;
+#nextButton {
+    background-color: rgba(13, 59, 102, 0.8);
+    color: #f0e68c;
+    border: 2px solid #f0e68c;
+    padding: 10px 20px;
+    font-family: 'Turret Road', cursive;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-top: 20px;
 }
-
-/* Animasi Bintang Latar Belakang */
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-
-#stars, #stars2, #stars3 {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    display:block;
-    z-index: 0;
-}
-
-#stars {
- background: transparent url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
- z-index:0;
- animation: move-twink-back 200s linear infinite;
-}
-
-#stars2 {
- background: transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
- z-index:1;
- animation: move-twink-back 150s linear infinite;
-}
-
-/* Animasi Roket */
-#rocket {
-    width: 100px;
-    position: absolute;
-    bottom: -150px; /* Mulai dari bawah layar */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    transition: bottom 2s ease-in-out;
-}
-
-.fly-in {
-    bottom: 120vh; /* Terbang ke atas hingga menghilang */
+#nextButton:hover {
+    background-color: #f0e68c;
+    color: #0d3b66;
 }
 
 /* Hadiah Terakhir */
 #gift-gif {
     margin: 20px 0;
-    max-width: 200px;
+    max-width: 180px;
     border-radius: 10px;
-    border: 3px solid #f4d35e;
+    border: 3px solid #f0e68c;
 }
 
 .wish {
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #faf0e6;
+}
+
+/* Kelas utilitas */
+.hidden {
+    display: none;
 }
